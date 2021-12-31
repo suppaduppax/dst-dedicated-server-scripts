@@ -1,0 +1,15 @@
+# Do not put anything in quotes
+# Do not put any spaces before or after the equals sign
+# See http://github.com/suppaduppax/dst-dedicated-server-scripts/ for details
+
+klei_dst_path=/path/to/.klei/DoNotStarveTogether
+steamcmd_path=/path/to/steamcmd
+dst_bin_path=/path/to/Don't Starve Together Dedicated Server/bin
+discord_webhook=https://discord.com/api/webhooks/secret_webhook
+
+# other settings
+log_enabled=true
+log_file="log.txt"
+log_file_max_lines=500
+release_file="update-last-release.txt"
+builds_url="https://s3.amazonaws.com/dstbuilds/builds.json"
