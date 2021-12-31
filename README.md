@@ -88,7 +88,7 @@ And run a command. For example to start a server:
 ./dst-start-server
 ```
 
-If you want to run these commands from anywhere without see below.
+Note: If you want to run these commands from anywhere or without prefixing with `./` see below.
 
 ### (Optional) Add scripts bin to user PATH environment ###
 If you want to be able to run the scripts from anywhere, add this line in your `~/.bashrc` file:
