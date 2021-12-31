@@ -7,9 +7,13 @@ steamcmd_path=/path/to/steamcmd
 dst_bin_path=/path/to/Don't Starve Together Dedicated Server/bin
 discord_webhook=https://discord.com/api/webhooks/secret_webhook
 
+# delay the shutdown and announce a warning when a new update is detected (in minutes)
+update_shutdown_delay=15
+update_shutdown_warning=5
+
 # other settings
 log_enabled=true
 log_file=dst.log
 log_file_max_lines=500
-release_file=update-last-release.txt
+release_file=current-server-version.txt
 builds_url=https://s3.amazonaws.com/dstbuilds/builds.json

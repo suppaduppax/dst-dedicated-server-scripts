@@ -75,7 +75,7 @@ trim_log_file() {
 shard_command() {
 	cluster=$(get_running_server)
 	if [ ! -z "$cluster" ]; then
-		echo "Sending '$2' to DST_${cluster}@$1"
+		log "Sending '$2' to DST_${cluster}@$1"
 		screen -S "DST_${cluster}@$1" -p 0 -X stuff "$2^M"
 	fi
 }
@@ -86,12 +86,16 @@ server_command() {
 }
 
 update_server() {
-	log_and_notify "Update scheduled in 20m"
-	server_announce "New DST update released! Shutting down server in 15 min" 
-	sleep 20
-	server_announce "Shutting down server in 5 min" 
-	sleep 5
-	server_announce "Shutting down server in 1 min" 
+	log_and_notify "Update scheduled in ${update_shutdown_delay} min"
+
+	server_announce "New DST update released! Shutting down server in ${update_shutdown_delay} min"
+	sleep "$((update_shutdown_delay-update_shutdown_warning))m"
+
+	server_announce "Shutting down server in ${update_shutdown_warning} min"
+	sleep "$((update_shutdown_warning-1))m"
+
+	# always warn at 1 min
+	server_announce "Shutting down server in 1 min"
 	sleep "1m"
 
 	stop_server
@@ -162,11 +166,14 @@ get_latest_release_version() {
 }
 
 write_current_server_version() {
+	log "Setting current server version to: ${1}"
 	echo "$1" > ${script_dir}/../${release_file}
 }
 
 log() {
-	echo "[$(date +"%d-%m-%y_%H:%M:%S")] $@" | tee -a "${script_dir}/../logs/${log_file}"
+	if [ -z "$log_enabled" ] || [[ "$log_enabled" == true ]]; then
+		echo "[$(date +"%d-%m-%y_%H:%M:%S")] $@" | tee -a "${script_dir}/../logs/${log_file}"
+	fi
 }
 
 log_and_notify() {

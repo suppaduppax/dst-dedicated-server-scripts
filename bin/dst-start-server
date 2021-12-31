@@ -30,10 +30,12 @@ cd "$steamcmd_path"
 
 cd "$dst_bin_path"
 
-echo "Starting ${cluster}@Master"
+log_and_notify "Starting server: ${cluster}"
+
+log "Starting shard: ${cluster}@Master"
 /usr/bin/screen -dmS "DST_${cluster}@Master" /bin/sh -c "./dontstarve_dedicated_server_nullrenderer -console -shard Master -cluster ${cluster}"
 
-echo "Starting ${cluster}@Caves"
+log "Starting shard: ${cluster}@Caves"
 /usr/bin/screen -dmS "DST_${cluster}@Caves" /bin/sh -c "./dontstarve_dedicated_server_nullrenderer -console -shard Caves -cluster ${cluster}"
 
 # since game has been validated/updated when starting, update current_server_version with the actual current dst release version

@@ -10,4 +10,5 @@ fi
 
 cluster_name=$(get_running_server)
 confirm "Stop cluster: ${cluster_name}"
+log_and_notify "Shutting down server: ${cluster_name}"
 server_command "c_shutdown()"
