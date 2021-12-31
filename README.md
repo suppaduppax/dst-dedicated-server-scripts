@@ -77,6 +77,15 @@ export PATH="$HOME/dst-dedicated-server-scripts/bin:$PATH"
 ```
 Make sure to replace `$HOME/` with the correct path. 
 
+### Commands ###
+|Command|Description
+|---|---
+| dst-start-server | Start a server. This will display a menu of any servers extracted to the klei dst directory. Select the one you want to start
+| dst-shutdown-server | Shutdown the currently running server. Does nothing if there isn't a server that is running
+| dst-update-server | Checks to see if there are any new server updates. If there is a new update detected, it will wait a few minutes (default: 15 min) before shutting the server down. If there are any players logged in, it will display a warning. Once the new update is installed, the server will be started again.
+| dst-list-servers | List all the servers found in the klei dst directory. If any servers are running, it will display a `[running]` tag beside that server
+
+
 ### (Optional) Automatic update checking ###
 If you want to check for updates automatically, go into your crontab:
 ```
