@@ -54,6 +54,12 @@ builds_url=https://s3.amazonaws.com/dstbuilds/builds.json
 ```
 
 ---
-Variable|Description
----
+|Variable|Description
+|---|---
 | klei_dst_path | The path to the actual server files. Usually found in `~/.klei/DoNotStarveTogether`
+| steamcmd_path | The path to the steamcmd file. 
+| dst_bin_path | The path to the DST bin directory. By default should be inside the steamcmd folder `<steamcmd_path>/steamapps/common/Don't Starve Together/bin`
+| discord_webhook | If you want to have discord notifications fill this in. To disable, leave blank `discord_webhook=`
+
+The other settings are more or less optional so we will skip them for now. 
+
