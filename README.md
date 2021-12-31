@@ -1,5 +1,11 @@
 # dst-dedicated-server-scripts
-A collection of scripts to run and manage Don't Starve Together dedicated servers
+A collection of scripts to run and manage Don't Starve Together dedicated servers.
+This was created to have only a single server active at a time but be able to easily start a server, stop it, and run a different one. This also allows automatic detection and installation of DST updates. 
+
+Features:
+- Start/stop DST servers from a menu
+- Automatic DST patch updates
+- Discord notifications
 
 ## Quick start guide
 ### Prerequisites ###
