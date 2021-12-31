@@ -9,7 +9,7 @@ Features:
 
 ## Quick start guide
 ### Prerequisites ###
-- The steam must already be installed in your system. Go to https://developer.valvesoftware.com/wiki/SteamCMD for instructions (the QuickStart used the manual installation into the user home directory)
+- Steam must already be installed in your system. Go to https://developer.valvesoftware.com/wiki/SteamCMD for instructions (the QuickStart used the manual installation into the user home directory)
 - A server along with a token must already be extracted to the klei dst directory. Go to https://accounts.klei.com/login to create your server template and token. 
 
 This guide does not cover these two steps and assumes it has already been done. 
