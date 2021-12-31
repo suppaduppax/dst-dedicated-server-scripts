@@ -52,3 +52,8 @@ log_file_max_lines=500
 release_file=current-server-version.txt
 builds_url=https://s3.amazonaws.com/dstbuilds/builds.json
 ```
+
+---
+Variable|Description
+---
+| klei_dst_path | The path to the actual server files. Usually found in `~/.klei/DoNotStarveTogether`
