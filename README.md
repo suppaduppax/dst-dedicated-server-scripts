@@ -77,3 +77,17 @@ export PATH="$HOME/dst-dedicated-server-scripts/bin:$PATH"
 ```
 Make sure to replace `$HOME/` with the correct path. 
 
+### (Optional) Automatic update checking ###
+If you want to check for updates automatically, go into your crontab:
+```
+crontab -e
+```
+And add the following line:
+```
+*/20 * * * * /bin/bash "/home/user/dst-dedicated-server-scripts/bin/dst-check-for-updates"
+```
+
+This checks for updates every 20 minutes. To change the interval simply change */20 to whatever you want. For example if you wanted to check every 40 min, change to */40. 
+Also make sure to change the path to the correct one. 
+
+The update script will give a warning in game in case any players are logged in. This is set to a 15 min warning by default and can be changed in the settings.conf file. 
