@@ -1,6 +1,7 @@
 # dst-dedicated-server-scripts
-Helper scripts to run and manage Don't Starve Together dedicated servers
+A collection of scripts to run and manage Don't Starve Together dedicated servers
 
+## Quick start guide
 Clone the repo to your system. All directories in these instructions will be in the users home directory. 
 `git clone https://github.com/suppaduppax/dst-dedicated-server-scripts`
 
