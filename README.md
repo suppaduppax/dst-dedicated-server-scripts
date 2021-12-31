@@ -70,13 +70,6 @@ builds_url=https://s3.amazonaws.com/dstbuilds/builds.json
 
 The other settings are more or less optional so we will skip them for now. 
 
-### (Optional) Add scripts bin to user PATH environment ###
-If you want to be able to run the scripts from anywhere, add this line in your `~/.bashrc` file:
-```
-export PATH="$HOME/dst-dedicated-server-scripts/bin:$PATH"
-```
-Make sure to replace `$HOME/` with the correct path. 
-
 ### Commands ###
 |Command|Description
 |---|---
@@ -84,6 +77,25 @@ Make sure to replace `$HOME/` with the correct path.
 | dst-shutdown-server | Shutdown the currently running server. Does nothing if there isn't a server that is running
 | dst-update-server | Checks to see if there are any new server updates. If there is a new update detected, it will wait a few minutes (default: 15 min) before shutting the server down. If there are any players logged in, it will display a warning. Once the new update is installed, the server will be started again.
 | dst-list-servers | List all the servers found in the klei dst directory. If any servers are running, it will display a `[running]` tag beside that server
+| dst-logs | Show the logs of the current running server. A menu will be displayed asking which Shard you want.
+
+To run these commands, go into the bin directory
+```
+cd /home/user/dst-dedicated-server-scripts
+```
+And run a command. For example to start a server:
+```
+./dst-start-server
+```
+
+If you want to run these commands from anywhere without see below.
+
+### (Optional) Add scripts bin to user PATH environment ###
+If you want to be able to run the scripts from anywhere, add this line in your `~/.bashrc` file:
+```
+export PATH="$HOME/dst-dedicated-server-scripts/bin:$PATH"
+```
+Make sure to replace `$HOME/` with the correct path. 
 
 
 ### (Optional) Automatic update checking ###
