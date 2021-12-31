@@ -3,8 +3,9 @@ A collection of scripts to run and manage Don't Starve Together dedicated server
 
 ## Quick start guide
 ### Prerequisites ###
-The steam must already be installed in your system. Go to https://developer.valvesoftware.com/wiki/SteamCMD for instructions (the QuickStart used the manual installation into the user home directory)
-A server along with a token must already be extracted to the klei dst directory. Go to https://accounts.klei.com/login to create your server template and token. 
+- The steam must already be installed in your system. Go to https://developer.valvesoftware.com/wiki/SteamCMD for instructions (the QuickStart used the manual installation into the user home directory)
+- A server along with a token must already be extracted to the klei dst directory. Go to https://accounts.klei.com/login to create your server template and token. 
+
 This guide does not cover these two steps and assumes it has already been done. 
 
 ### Installation and Setup ###
@@ -68,4 +69,11 @@ builds_url=https://s3.amazonaws.com/dstbuilds/builds.json
 | discord_webhook | If you want to have discord notifications fill this in. To disable, leave blank `discord_webhook=`
 
 The other settings are more or less optional so we will skip them for now. 
+
+### (Optional) Add scripts bin to user PATH environment ###
+If you want to be able to run the scripts from anywhere, add this line in your `~/.bashrc` file:
+```
+export PATH="$HOME/dst-dedicated-server-scripts/bin:$PATH"
+```
+Make sure to replace `$HOME/` with the correct path. 
 
