@@ -3,20 +3,20 @@ A collection of scripts to run and manage Don't Starve Together dedicated server
 
 ## Quick start guide
 Clone the repo to your system. All directories in these instructions will be in the users home directory. 
-`git clone https://github.com/suppaduppax/dst-dedicated-server-scripts`
+```git clone https://github.com/suppaduppax/dst-dedicated-server-scripts```
 
 Now go into that directory
-`cd dst-dedicated-server-scripts`
+```cd dst-dedicated-server-scripts```
 
 First thing that needs to be done is the `settings.conf` file needs to be created. 
 Copy the settings.conf.template file as a starting point
-`cp settings.conf.template settings.conf`
+```cp settings.conf.template settings.conf```
 
 Edit the settings to match your environment. For this example we will be using nano but use whichever editor you want to.
-`nano settings.conf`
+```nano settings.conf```
 
 Here is an example of a working settings file:
-`/home/user/dst-dedicated-server-scripts/settings.conf`
+```/home/user/dst-dedicated-server-scripts/settings.conf```
 ```
 # Do not put anything in quotes
 # Do not put any spaces before or after the equals sign
