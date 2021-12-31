@@ -1,6 +1,6 @@
 #!/bin/bash
 script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-source "${script_dir}/library.sh"
+source "${script_dir}/lib/dst-common.lib"
 
 running_cluster=$(get_running_server)
 
@@ -35,3 +35,6 @@ echo "Starting ${cluster}@Master"
 
 echo "Starting ${cluster}@Caves"
 /usr/bin/screen -dmS "DST_${cluster}@Caves" /bin/sh -c "./dontstarve_dedicated_server_nullrenderer -console -shard Caves -cluster ${cluster}"
+
+# since game has been validated/updated when starting, update current_server_version with the actual current dst release version
+write_current_server_version "$(get_latest_release_version)"

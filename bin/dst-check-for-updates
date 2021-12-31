@@ -1,0 +1,46 @@
+#!/bin/bash
+script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+source "${script_dir}/lib/dst-common.lib"
+
+# quit if no clusters are running...
+if ! is_server_running; then
+	echo "No servers are running..."
+	exit 1
+fi
+
+current_release=$(get_latest_release_version)
+
+if [ -z current_release ]; then
+	log_and_notify "[Error] Could not get current release! Check forum_html link for errors."
+	exit 1;
+fi
+
+trap trim_log_file EXIT
+
+# get the last release since update
+if [ -f "${script_dir}/../${release_file}" ]; then
+	current_server_release=$(cat "${script_dir}/../${release_file}")
+fi
+
+if [ -z "$current_server_release" ]; then
+	log_and_notify "Unable to fetch release of running server from $release_file! Attempting update..."
+	update_server
+
+	# write update file
+	write_latest_release_version "$current_release"
+
+	start_server
+elif [ "$current_release" -gt "$current_server_release" ]; then
+	log_and_notify "New release detected!"
+	log_and_notify "Updating from $current_server_release to $current_release..."
+	update_server
+
+	# write update file
+	write_latest_release_version "$current_release"
+
+	start_server
+else
+	# do not send discord msg with this
+	log "Server is already up to date (release: ${current_server_release})"
+fi
+

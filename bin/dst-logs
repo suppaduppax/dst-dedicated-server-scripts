@@ -1,6 +1,6 @@
 #!/bin/bash
 script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-source "${script_dir}/library.sh"
+source "${script_dir}/lib/dst-common.lib"
 
 screen_list=($(screen -list | grep -P -oe "[0-9]+[.]DST_\S+" | grep -P -oe "[^.]+$"))
 
@@ -29,4 +29,4 @@ fi
 cluster=$(echo "${screen_list[shard_num]}" | grep -P -oe "(?<=DST_)[^@]+")
 shard=$(echo "${screen_list[shard_num]}" | grep -P -oe "(?<=@).+")
 
-tail -f "${klei_dst_path}/${cluster}/${shard}/server_log.txt"
+tail -n 50 -f "${klei_dst_path}/${cluster}/${shard}/server_log.txt"

@@ -1,3 +1,4 @@
 *.bak
 *test*
 settings.conf
+current-server-version.txt
